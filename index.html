@@ -1,18 +1,36 @@
 <html>
 <head>
 <title>LED ON/OFF</title>
+<link rel="stylesheet" type="text/css" href="style.css">    
+    
 </head>
-<body>
-<!-- This is just for aesthetics, centering the
-content within the paragraph -->
-<p align="center">
-<font size="8">
- 
-<!-- This part is a a link, which also sends a request to the php-document,
-telling it to write 1 or 0 to LEDstate.txt -->
-<b><a href="led.php?state=1">ON</a></b> /
-<b><a href="led.php?state=2">OFF</a></b></font>
-</p>
- 
+
+<table style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;" border="0">
+    <tr height="45%">
+        <td>
+        
+        </td>
+    </tr>
+    <tr height="32%">
+        <td width="33%">
+        </td>
+        <td width="17%">
+            <a href="led.php?state=1" style="display:block;width:100%;height:100%;text-decoration:none;">&nbsp;</a>
+        </td>
+        <td width="17%">
+        </td>
+        <td width="17%">
+            <a href="led.php?state=2" style="display:block;width:100%;height:100%;text-decoration:none;">&nbsp;</a>
+        </td>
+        <td width="16%">
+        </td>
+    </tr>
+    <tr height="23%">
+        <td>
+        </td>
+    </tr>
+</table>
+    
+    
 </body>
 </html>
