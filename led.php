@@ -7,5 +7,5 @@ $fh = fopen($fileLocation, 'w') or die("Something went wrong!"); // Opens up the
 fwrite($fh, $onoroff); // Writes it to the .txt file
 fclose($fh); 
  
-header("Location: index.html"); // Return to frontend (index.html)
+header("Location: index.php"); // Return to frontend (index.html)
 ?>

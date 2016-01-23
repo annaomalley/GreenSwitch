@@ -1,9 +1,26 @@
 <html>
 <head>
-<title>LED ON/OFF</title>
+<title>GreenSwitch</title>
 <link rel="stylesheet" type="text/css" href="style.css">    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+    $("#day").click(function(){
+        $('body').removeClass();
+        $('body').addClass('day');
+
+    });
+    $("#night").click(function(){
+        $('body').removeClass();
+        $('body').addClass('night');
+    });
     
+});
+</script>
+
 </head>
+    
+<body class="day">
 
 <table style="position: absolute; top: 0; bottom: 0; left: 0; right: 0;" border="0">
     <tr height="45%">
@@ -15,12 +32,12 @@
         <td width="33%">
         </td>
         <td width="17%">
-            <a href="led.php?state=1" style="display:block;width:100%;height:100%;text-decoration:none;">&nbsp;</a>
+            <a id="day" href="led.php?state=1" style="display:block;width:100%;height:100%;text-decoration:none;">&nbsp;</a>
         </td>
         <td width="17%">
         </td>
         <td width="17%">
-            <a href="led.php?state=2" style="display:block;width:100%;height:100%;text-decoration:none;">&nbsp;</a>
+            <a id="night" href="led.php?state=2" style="display:block;width:100%;height:100%;text-decoration:none;">&nbsp;</a>
         </td>
         <td width="16%">
         </td>
@@ -30,7 +47,7 @@
         </td>
     </tr>
 </table>
-    
+    </div>
     
 </body>
 </html>
