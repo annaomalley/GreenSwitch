@@ -2,15 +2,6 @@
 #include <WiFi101.h>
 #include <Servo.h> // servo library
 
-int servoPin = 9;
-Servo myServo;
-boolean lit = true;
-
-int sCCW = 180;
-int sCW = 0;
-int sStop = 95;
-char c;
-
 char ssid[] = "privateNetwork"; //  your network SSID (name)
 char pass[] = "dontUseMyWifi";    // your network password (use for WPA, or use as key for WEP)
 //int keyIndex = 0;            // your network key Index number (needed only for WEP)
@@ -28,7 +19,18 @@ IPAddress server(78, 129, 205, 40);
 // that you want to connect to (port 80 is default for HTTP):
 WiFiClient client;
 
+int servoPin = 9;
+Servo myServo;
+boolean lit = true;
+
+int sCCW = 180;
+int sCW = 0;
+int sStop = 95;
+char c;
+
 void setup() {
+  
+  myServo.write(sStop);
   pinMode(servoPin, OUTPUT); // digital pin is an output pin
   myServo.attach(servoPin); //
   
@@ -62,6 +64,8 @@ void setup() {
 }
 
 void loop() {
+  
+  myServo.write(sStop);
 
     Serial.println("\nStarting connection to server...");
   // if you get a connection, report back via serial:
@@ -94,8 +98,6 @@ void loop() {
     //Serial.println("disconnecting from server.");
     client.stop();
   }
-  
-  myServo.write(sStop);
 
 
   if (lit && c == '@') {
