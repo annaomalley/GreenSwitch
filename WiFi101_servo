@@ -99,15 +99,17 @@ void loop() {
 
 
   if (lit && c == '@') {
+    Serial.print("TURN OFF");
     myServo.write(sCW);
-    delay(500); 
+    delay(160); 
     myServo.write(sStop);
     lit = false;
   }
 
   else if (!lit && c == '$') {
+    Serial.print("TURN ON");
     myServo.write(sCCW);
-    delay(500); //ms
+    delay(160); 
     myServo.write(sStop);
     lit = true;
   }
